@@ -5,8 +5,8 @@ ARG PHP_EXTENSIONS=bcmath,gd,pcntl,pdo_mysql,redis,sockets,swoole,sysvmsg,sysvse
 ARG ALPINE_REPOSITORIES=mirrors.aliyun.com
 ARG COMPOSER_DIR=/.composer
 
-ARG REDIS_VERSION=5.2.1
-ARG SWOOLE_VERSION=4.4.17
+ARG REDIS_VERSION=5.2.2
+ARG SWOOLE_VERSION=4.5.1
 
 ARG BUILD_DEPS=.build-deps
 
