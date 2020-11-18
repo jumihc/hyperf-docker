@@ -15,11 +15,12 @@ ARG EXTENSIONS_PATH=/tmp/extensions
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME ${COMPOSER_DIR}
+ENV COMPOSER_MEMORY_LIMIT -1
 RUN set -ex \
     && php -r " \
     copy('https://getcomposer.org/installer', '/tmp/composer-setup.php'); \
     " \
-    && php /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer \
+    && php -d zlib.output_compression=on /tmp/composer-setup.php --no-ansi --install-dir=/usr/local/bin --filename=composer \
     && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
 WORKDIR ${EXTENSIONS_PATH}
