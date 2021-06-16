@@ -101,7 +101,7 @@ if [ -z "${EXTENSIONS##*,swoole,*}" -a \
         apk add --no-cache --virtual .swoole-deps openssl-dev curl-dev
         mkdir swoole \
         && tar -xf swoole-${SWOOLE_VERSION}.tgz -C swoole --strip-components=1 \
-        && ( cd swoole && phpize && ./configure --enable-thread-context --enable-swoole-curl --enable-swoole-json  --enable-http2 --enable-mysqlnd \
+        && ( cd swoole && phpize && ./configure --enable-thread-context --enable-swoole-curl --enable-swoole-json  --enable-http2 \
         --enable-openssl -with-openssl-dir=/usr/include/openssl \
         && make ${MC} && make install ) \
         && docker-php-ext-enable swoole
