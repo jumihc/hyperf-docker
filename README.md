@@ -6,8 +6,8 @@
 
 - [`php:7.4-cli-alpine`](https://github.com/docker-library/php/blob/master/7.4/alpine3.11/cli/Dockerfile)
 - [`composer`](https://getcomposer.org/)
-- [`php-ext:redis-5.3.4`](https://github.com/phpredis/phpredis/)
-- [`php-ext:swoole-4.6.7`](https://github.com/swoole/swoole-src/)
+- [`php-ext:redis-5.3.5`](https://github.com/phpredis/phpredis/)
+- [`php-ext:swoole-4.8.4`](https://github.com/swoole/swoole-src/)
 
 # How to build
 

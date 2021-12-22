@@ -98,10 +98,10 @@ if [ -z "${EXTENSIONS##*,swoole,*}" -a \
     php --ri swoole &> /dev/null
     if [ $? -ne 0 ] ; then
         echo "---------- Install swoole ----------"
-        apk add --no-cache --virtual .swoole-deps openssl-dev curl-dev
+        apk add --no-cache --virtual .swoole-deps openssl-dev curl-dev c-ares-dev
         mkdir swoole \
         && tar -xf swoole-${SWOOLE_VERSION}.tgz -C swoole --strip-components=1 \
-        && ( cd swoole && phpize && ./configure --enable-thread-context --enable-swoole-curl --enable-swoole-json  --enable-http2 \
+        && ( cd swoole && phpize && ./configure --enable-cares --enable-swoole-curl --enable-swoole-json  --enable-http2 \
         --enable-openssl -with-openssl-dir=/usr/include/openssl \
         && make ${MC} && make install ) \
         && docker-php-ext-enable swoole
